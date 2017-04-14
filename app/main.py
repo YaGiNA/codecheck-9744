@@ -16,7 +16,7 @@ def main(argv):
 
     try:
         query = {"q": argv[0]}
-    except NameError:
+    except IndexError:
         logger.debug("parameter is not exist.")
     r = requests.get(url, params=query).json()
     print(r["hash"])
